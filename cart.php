@@ -1,11 +1,10 @@
 <?php require_once("includes/header.php")?>
 
-
     <!-- Navbar -->
-    <?php require_once("includes/navbar.php")?>
+    <?php require_once("includes/navbar.php") ?>
 
     <!-- Shopping Cart -->
-    <div class="container content mt-5">
+    <div class="container content my-5">
         <div class="row">
             <!-- Shopping Cart Items -->
             <div class="col-md-8">
@@ -82,5 +81,4 @@
     
    
 
-   <!-- Footer -->
-   <?php require_once("includes/footer.php")?>
+    <?php require_once("includes/footer.php")?>
