@@ -1,6 +1,7 @@
 <?php 
 session_start();
-require_once("includes/header.php");
+require_once(__DIR__."/app/config/Directories.php"); 
+require_once(ROOT_DIR."includes/header.php");
 
 if(isset($_SESSION["error"])){
     $messErr = $_SESSION["error"];
@@ -41,7 +42,7 @@ if(isset($_SESSION["success"])){
                         </div>
                         <?php } ?>
 
-                        <form action="app/auth/register.php" method="POST">
+                        <form action="app/auth/Register.php" method="POST">
                             <div class="mb-3">
                                 <label for="fullname" class="form-label">Full Name</label>
                                 <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Enter your full name" required>
@@ -71,9 +72,4 @@ if(isset($_SESSION["success"])){
         </div>
     </div>
 
-<!-- Bootstrap 5 JS Bundle -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
-    
-<?php require_once(ROOT_DIR."includes/footer.php"); ?>
+    <?php require_once(ROOT_DIR."includes/footer.php"); ?>

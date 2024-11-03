@@ -1,11 +1,13 @@
 <?php 
 session_start();
-require_once("includes/header.php");
+require_once(__DIR__."/app/config/Directories.php"); 
+require_once(ROOT_DIR."includes/header.php");
+
     if(isset($_SESSION["error"])){
         $messErr = $_SESSION["error"];
         unset($_SESSION["error"]);
     }
-
+    
     if(isset($_SESSION["success"])){
     $messSucc = $_SESSION["success"];
     unset($_SESSION["success"]);
@@ -63,9 +65,6 @@ require_once("includes/header.php");
         </div>
     </div>
     
-<!-- Bootstrap 5 JS Bundle -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+    
 
-<?php require_once(ROOT_DIR."includes/footer.php"); ?>
+    <?php require_once(ROOT_DIR."includes/footer.php"); ?>

@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 
 class DatabaseConnect {
@@ -8,7 +8,6 @@ class DatabaseConnect {
     private $dbpassword = "";
     private $charset    = 'utf8mb4';
     private $conn = null;
-
 
     public function connectDB(){
         $dsn = "mysql: host=$this->host;dbname=$this->database;charset=" . $this->charset;
