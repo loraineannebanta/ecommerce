@@ -57,8 +57,8 @@
         <?php
          foreach($productList as $product){
         include(ROOT_DIR.'views/components/product-card.php');
-      }
-      ?>
+        }
+        ?>
        </div>
     </div>
 
