@@ -47,7 +47,6 @@ if(isset($_SESSION["success"])){
                 </div>
             <?php } ?>
 
-
             <?php if(isset($messErr)){ ?>
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
                     <strong><?php echo $messErr; ?></strong>
@@ -84,7 +83,7 @@ if(isset($_SESSION["success"])){
 
                         <!-- Add to Cart Button -->
                         <div class="d-grid gap-2">
-                            <button type="submit" class="btn btn-primary btn-lg">Add to Cart</button>
+                            <button type="submit" class="btn btn-primary btn-lg" <?php echo ($product["stocks"] <= 0? "disabled": ""); ?>><?php echo ($product["stocks"] <= 0? "Soldout": "Add to Cart"); ?></button>
                         </div>
                     </form>
                     <input type="hidden" name="id" value="<?php echo $product["id"]; ?>">
@@ -166,7 +165,6 @@ if(isset($_SESSION["success"])){
         <a href="#" class="text-white">Terms & Conditions</a>
     </nav>
 </footer>
-
    
 <!-- Bootstrap 5 JS Bundle -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
