@@ -13,12 +13,10 @@
     }
 
     include(ROOT_DIR."app/product/get_products.php");
-   
 ?>
+    <!-- Navbar -->
+    <?php require_once(ROOT_DIR."includes/navbar.php"); ?>
 
-
-<?php require_once(ROOT_DIR."includes/navbar.php"); ?>
- 
     <?php require_once(ROOT_DIR."views/components/page-guard.php"); ?>
 
     <!-- Page Header -->
@@ -42,26 +40,27 @@
                         <strong><?php echo $messErr; ?></strong>
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
-                        <?php } ?>
-
+        <?php } ?>
 
         <p class="text-center">Manage all products in the catalog</p>
         <hr>
     </div>
 
-   
     <!-- Product Cards Container -->
     <div class="container content mt-3">
         <div class="row">
-           
-        <?php
-         foreach($productList as $product){
-        include(ROOT_DIR.'views/components/product-card.php');
-        }
-        ?>
-       </div>
+            <!-- Sample Product Card -->
+            <!-- Loop through each product and generate a card dynamically -->
+            <?php
+                foreach($productList as $product){
+                    include(ROOT_DIR.'views/components/product-card.php');
+                }
+            ?>
+            
+            <!-- Add more product cards dynamically based on your backend data -->
+        </div>
     </div>
 
-   
+    
 
     <?php require_once(ROOT_DIR."includes/footer.php"); ?>

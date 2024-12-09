@@ -39,20 +39,21 @@ if(isset($_SESSION["success"])){
     <!-- Product Details -->
     <div class="container my-2 bg-bpod">
         <div class="container mt-5">
+            
+        <?php if(isset($messSucc)){ ?>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong><?php echo $messSucc; ?></strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <?php } ?>
 
-            <?php if(isset($messSucc)){ ?>
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <strong><?php echo $messSucc; ?></strong>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            <?php } ?>
 
-            <?php if(isset($messErr)){ ?>
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    <strong><?php echo $messErr; ?></strong>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            <?php } ?>
+        <?php if(isset($messErr)){ ?>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong><?php echo $messErr; ?></strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+         <?php } ?>
 
             <div class="row">
                 <!-- Product Image -->
@@ -83,10 +84,9 @@ if(isset($_SESSION["success"])){
 
                         <!-- Add to Cart Button -->
                         <div class="d-grid gap-2">
-                            <button type="submit" class="btn btn-primary btn-lg" <?php echo ($product["stocks"] <= 0? "disabled": ""); ?>><?php echo ($product["stocks"] <= 0? "Soldout": "Add to Cart"); ?></button>
+                            <button type="submit" class="btn btn-primary btn-lg" <?php echo ($product["stocks"] <= 0 ? "disabled" : "") ?>><?php echo ($product["stocks"] <= 0 ? "Sold out" : "Add to Cart") ?></button>
                         </div>
                     </form>
-                    <input type="hidden" name="id" value="<?php echo $product["id"]; ?>">
                 </div>
                 
             </div>
@@ -165,6 +165,7 @@ if(isset($_SESSION["success"])){
         <a href="#" class="text-white">Terms & Conditions</a>
     </nav>
 </footer>
+
    
 <!-- Bootstrap 5 JS Bundle -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>

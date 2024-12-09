@@ -1,30 +1,26 @@
-delete_product.php                                                                                                                                      <?php
+<?php
 session_start();
 
-require_once(__DIR__."/../config/Directories.php");
-include("..\config/DatabaseConnect.php");
-    $db = new DatabaseConnect();
-    $conn = $db->connectDB();
+require_once(__DIR__."/../config/Directories.php"); //to handle folder specific path
+include("../config/DatabaseConnect.php"); //to access database connection
 
-    
- if ($_SERVER["REQUEST_METHOD"] == "POST"){
-    $productId= $_POST["id"];
+$db = new DatabaseConnect();
+$conn = $db->connectDB();
 
-    
-    try {
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    $productId = $_POST["id"];
 
-        $sql  = "DELETE FROM products WHERE products.id = :p_id"; //select statement here
+    try{
+        $sql = "DELETE FROM products WHERE products.id = :p_id";
         $stmt = $conn->prepare($sql);
-        $stmt->bindParam(':p_id', $productId);
+        $stmt->bindParam(':p_id',$productId);
         $stmt->execute();
 
-        $_SESSION["success"] = "product has been deleted";
-        header("location:" .BASE_URL. "views/admin/products/index.php");
+        $_SESSION["success"] = "Product has been deleted";
+        header("location: ".BASE_URL."views/admin/products/index.php");
         exit;
-
     } catch (PDOException $e){
-       echo "Connection Failed: " . $e->getMessage();
-       $db = null;
+        echo "Connection Failed: " . $e->getMessage();
+        $db = null;
     }
-
 }

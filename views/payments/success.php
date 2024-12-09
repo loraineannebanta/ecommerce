@@ -1,4 +1,4 @@
-<?php
+<?php 
 session_start();
 require_once(__DIR__."/../../app/config/Directories.php");
 
@@ -8,12 +8,12 @@ if(isset($_SESSION["success"])){
 }
 require_once(ROOT_DIR."/includes/header.php");
 ?>
-   <?php require_once(ROOT_DIR."includes/navbar.php"); ?>
+    <?php require_once(ROOT_DIR."/includes/navbar.php"); ?>
 
-   <?php
-       if(!isset($_SESSION["username"])){
-           header("location: ".BASE_URL."login.php");
-           exit;
+    <?php 
+        if(!isset($_SESSION["username"])){
+            header("location: ".BASE_URL."login.php");
+            exit;
         }
     ?>
 
@@ -22,7 +22,7 @@ require_once(ROOT_DIR."/includes/header.php");
             <div class="col-md-6">
                 <div class="card shadow-sm">
                     <div class="card-header text-center bg-success text-white">
-                        <h4><?php echo (isset($messageSucc) ? $messageSucc : "Payment Success") ; ?></h4>
+                        <h4><?php echo (isset($messageSucc) ? $messageSucc : "Payment Successful"); ?></h4>
                     </div>
                     <div class="card-body text-center">
                         <i class="fas fa-check-circle fa-5x text-success mb-3"></i>
@@ -34,4 +34,4 @@ require_once(ROOT_DIR."/includes/header.php");
         </div>
     </div>
 
-   <?php require_once(ROOT_DIR."includes/footer.php"); ?>
+    <?php require_once(ROOT_DIR."/includes/footer.php"); ?>

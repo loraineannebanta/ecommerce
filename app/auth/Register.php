@@ -1,4 +1,4 @@
-<?php
+<?php 
 session_start();
 //RECEIVE USER INPUT
 $fullname = $_POST["fullname"];
@@ -7,21 +7,21 @@ $password = $_POST["password"];
 $confirmPassword = $_POST["confirmPassword"];
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-   
+    
     //VERIFY PASSWORD AND CONFIRMPASSWORD TO BE MATCH
     if(trim($password) == trim($confirmPassword)){
         //CONNECT DATABASE
-       
+        
         $host = "localhost";
-        $database = "ecommerceb2";
-        $dbusername = "root";
-        $dbpassword = "";
-       
+        $database = "ecommerce_lbanta"; //"ecommerceb2";
+        $dbusername = "lbanta";         //"root";
+        $dbpassword = "L84nta_2024";    //"";
+        
         $dsn = "mysql: host=$host;dbname=$database;";
         try {
             $conn = new PDO($dsn, $dbusername, $dbpassword);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-           
+            
             $stmt = $conn->prepare("INSERT INTO user (fullname,username,password,created_at,updated_at) VALUES (:p_fullname,:p_username,:p_password,NOW(),NOW())");
             $stmt->bindParam(':p_fullname',$fullname);
             $stmt->bindParam(':p_username',$username);

@@ -80,7 +80,7 @@ INSERT INTO `products` (`product_name`, `product_description`, `category_id`, `b
 ('Power Supply', 'Corsair 750W', 2, 90, 10, 130, 1300, 'public/uploads/products/gpu.jpg', NOW(), NOW()),
 ('Cooling System', 'Cooler Master Hyper 212', 2, 40, 25, 70, 1750, 'public/uploads/products/ram.jpg', NOW(), NOW()),
 ('PC Case', 'NZXT H510', 2, 70, 15, 110, 1650, 'public/uploads/products/psu.jpg', NOW(), NOW()),
-('Monitor', 'Acer 24\" 144Hz', 3, 200, 7, 300, 2100, 'public/uploads/products/mobo.png', NOW(), NOW()),
+('Monitor', 'Acer 24/" 144Hz', 3, 200, 7, 300, 2100, 'public/uploads/products/mobo.png', NOW(), NOW()),
 ('Keyboard', 'Logitech Mechanical', 3, 60, 20, 100, 2000, 'public/uploads/products/cpu.jpg', NOW(), NOW()),
 ('Mouse', 'Razer DeathAdder', 3, 40, 25, 80, 2000, 'public/uploads/products/gpu.jpg', NOW(), NOW()),
 ('Gaming Headset', 'HyperX Cloud II', 3, 50, 18, 90, 1620, 'public/uploads/products/gpu.jpg', NOW(), NOW()),

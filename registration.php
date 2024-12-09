@@ -1,7 +1,7 @@
 <?php 
+require_once($_SERVER["DOCUMENT_ROOT"]."/app/config/Directories.php");
 session_start();
-require_once(__DIR__."/app/config/Directories.php"); 
-require_once(ROOT_DIR."includes/header.php");
+require_once("includes/header.php");
 
 if(isset($_SESSION["error"])){
     $messErr = $_SESSION["error"];
@@ -15,7 +15,7 @@ if(isset($_SESSION["success"])){
 ?>
 
     <!-- Navbar -->
-    <?php require_once("includes/navbar.php") ?>
+    <?php require_once(ROOT_DIR."includes/navbar.php"); ?>
 
     <!-- Registration Form -->
     <div class="container content my-5">
@@ -37,8 +37,8 @@ if(isset($_SESSION["success"])){
 
                     <?php if(isset($messErr)){ ?>
                         <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                            <strong><?php echo $messErr; ?></strong> 
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        <strong><?php echo $messErr; ?></strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
                         <?php } ?>
 

@@ -1,14 +1,12 @@
 <?php 
 session_start();
-require_once(__DIR__."/app/config/Directories.php"); 
+require_once($_SERVER["DOCUMENT_ROOT"]."/app/config/Directories.php");
 include(ROOT_DIR."app/product/get_products.php");
-require_once(ROOT_DIR."includes/header.php");
-
+require_once("includes/header.php");
 ?>
 
     <!-- Navbar -->
-       <?php require_once("includes/navbar.php")?>
-
+    <?php require_once(ROOT_DIR."includes/navbar.php"); ?>
 
     <!-- Hero Section -->
     <div class="container-fluid bg-primary text-white text-center py-5">
@@ -54,12 +52,12 @@ require_once(ROOT_DIR."includes/header.php");
     <!-- Featured Products Section -->
     <div class="container content my-5" id="products">
         <h2 class="text-center mb-4">Featured Products</h2>
-        <div class="row gy-4">
-        <?php
-            foreach($productList as $product){
-                include(ROOT_DIR.'views/components/product-cart.php');
-            }
-        ?>
+        <div class="row gy-3">
+            <?php
+                foreach($productList as $product){
+                    include(ROOT_DIR.'views/components/product-cart.php');
+                }
+            ?>      
         </div>
     </div>
     
